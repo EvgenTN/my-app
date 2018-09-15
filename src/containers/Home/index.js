@@ -20,6 +20,9 @@ class Home extends Component {
     // console.log('home_props', this.props)
     const {
       users,
+      deleteUser,
+      showPhrase,
+      // isPhrase,
     } = this.props;
     return (
       <div className='container home'>
@@ -32,6 +35,9 @@ class Home extends Component {
         <h1>Hello from home</h1>
         <UserList 
           users={users}
+          deleteUser={deleteUser}
+          showPhrase={showPhrase}
+          // isPhrase={isPhrase}
         />
       </div>
     )
@@ -39,15 +45,18 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log('state', state)
+  // console.log('state', state)
   return {
     users: state.data.users,
+    // isPhrase: state.data.isPhrase,
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    initData: users => dispatch(dataAction.initUsers(users))
+    initData: users => dispatch(dataAction.initUsers(users)),
+    deleteUser: id => dispatch(dataAction.deleteUser(id)),
+    showPhrase: (item, id) => dispatch(dataAction.showPhrase(item, id)),
   }
 };
 
