@@ -25,6 +25,15 @@ export default (state = [], action) => {
       ...state,
       users: res,
     }  
+    case actionType.ADD_USER:
+    const addUser = [
+      ...state,
+    ]
+    addUser.push('action.payload');
+    return {
+      ...state,
+      users: addUser,
+    }
     default:
       return state;
   }

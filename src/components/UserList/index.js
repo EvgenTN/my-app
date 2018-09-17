@@ -6,9 +6,24 @@ export default (props) => {
     users,
     deleteUser,
     showPhrase,
+    addUser,
   } = props;
   return (
     <div className='container userList'>
+      <div className='userList__add'>
+        <form className='form-group' onSubmit=''>
+          <input type='text' placeholder='Enter name' className='form-control' />
+          <input type='text' placeholder='Enter age' className='form-control' />
+          <input type='text' placeholder='Enter phone' className='form-control' />
+          <button
+            type='submit'
+            className='btn btn-success'
+            onClick={(e) => console.log(e.target.value)}
+          >
+            Add User
+          </button>
+        </form>
+      </div>
       {
         users && users.map((item, id) => {
           const {
@@ -46,14 +61,14 @@ export default (props) => {
                   </button>
                 </div>
               </div>
-              {isPhrase && 
-              <div>{phrase}</div>
+              {isPhrase &&
+                <div>{phrase}</div>
               }
             </React.Fragment>
           )
         })
       }
-      
+
 
       <p>this is userList</p>
     </div>

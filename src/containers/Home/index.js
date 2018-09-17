@@ -22,6 +22,7 @@ class Home extends Component {
       users,
       deleteUser,
       showPhrase,
+      addUser,
       // isPhrase,
     } = this.props;
     return (
@@ -37,6 +38,7 @@ class Home extends Component {
           users={users}
           deleteUser={deleteUser}
           showPhrase={showPhrase}
+          addUser={addUser}
           // isPhrase={isPhrase}
         />
       </div>
@@ -57,6 +59,7 @@ const mapDispatchToProps = (dispatch) => {
     initData: users => dispatch(dataAction.initUsers(users)),
     deleteUser: id => dispatch(dataAction.deleteUser(id)),
     showPhrase: (item, id) => dispatch(dataAction.showPhrase(item, id)),
+    addUser: user => dispatch(dataAction.addUser(user))
   }
 };
 

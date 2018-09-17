@@ -21,3 +21,9 @@ export const showPhrase = (id) => {
   }
 }
 
+export const addUser = (user) => {
+  return {
+    type: actionTypes.ADD_USER,
+    payload: user,
+  }
+}
