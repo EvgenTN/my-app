@@ -1,24 +1,27 @@
 import React from 'react';
 
 export default (props) => {
-  console.log('props', props)
+  // console.log('props', props)
   const {
     users,
     deleteUser,
     showPhrase,
     addUser,
+    addName,
+    addAge,
+    addPhone,
+    homeState,
   } = props;
   return (
     <div className='container userList'>
       <div className='userList__add'>
-        <form className='form-group' onSubmit=''>
-          <input type='text' placeholder='Enter name' className='form-control' />
-          <input type='text' placeholder='Enter age' className='form-control' />
-          <input type='text' placeholder='Enter phone' className='form-control' />
+        <form className='form-group' onSubmit= {(e) => addUser(e)}>
+          <input type='text' placeholder='Enter name' className='form-control' onChange={(e) => addName(e)} value={homeState.name} />
+          <input type='text' placeholder='Enter age' className='form-control' onChange={(e) => addAge(e)} value={homeState.age} />
+          <input type='text' placeholder='Enter phone' className='form-control' onChange={(e) => addPhone(e)} value={homeState.phone} />
           <button
             type='submit'
             className='btn btn-success'
-            onClick={(e) => console.log(e.target.value)}
           >
             Add User
           </button>

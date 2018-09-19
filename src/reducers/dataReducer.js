@@ -27,9 +27,9 @@ export default (state = [], action) => {
     }  
     case actionType.ADD_USER:
     const addUser = [
-      ...state,
+      ...state.users,
     ]
-    addUser.push('action.payload');
+    addUser.unshift(action.payload);
     return {
       ...state,
       users: addUser,
